@@ -41,3 +41,13 @@
     </div>
   </div>
 </div>
+
+<ul>
+  <dt> Number of Characters in Film </dt>
+  <dd> <%=Character.where(:movie_id =>@movie.id).count %>
+  </dd>
+  <%Character.where(:movie_id=>@movie.id).each do |character| %>
+  <li> <%= character.name%></li>
+  <% end %>
+
+  </ul>

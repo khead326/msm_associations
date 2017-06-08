@@ -2,18 +2,21 @@ class CharactersController < ApplicationController
   def index
     @characters = Character.all
 
+
     render("characters/index.html.erb")
   end
 
   def show
     @character = Character.find(params[:id])
+    @actor = Actor.new
+    @movie = Movie.new
 
     render("characters/show.html.erb")
   end
 
   def new
     @character = Character.new
-    
+
 
     render("characters/new.html.erb")
   end
